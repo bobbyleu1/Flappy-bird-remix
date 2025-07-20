@@ -12,13 +12,12 @@ const windowWidth = Dimensions.get('window').width
 
 const BOTTOM = 51
 
-export default () => {
+export default (dispatch: (event: any) => void) => {
   let engine = Matter.Engine.create({
-    enableSleeping: false
+    enableSleeping: false,
   })
 
   let world = engine.world
-
   engine.gravity.y = 0.4
 
   const pipeSizePosA = getPipeSizePosPair()
@@ -26,7 +25,8 @@ export default () => {
 
   return {
     physics: { engine, world },
-    Bird: Bird(world, 'green', { x: 120, y: 400 }, { height: 40, width: 40 }),
+
+    Bird: Bird(world, 'green', { x: 120, y: 400 }, { height: 40, width: 40 }, dispatch),
 
     ObstacleTop1: Obstacle(
       world,
@@ -69,6 +69,6 @@ export default () => {
       '#E1D694',
       { x: windowWidth / 2, y: windowHeight - 17 },
       { height: BOTTOM + 20, width: windowWidth }
-    )
+    ),
   }
 }
