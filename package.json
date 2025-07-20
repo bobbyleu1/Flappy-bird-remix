@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "expo": "~47.0.9",
+    "expo-ads-admob": "^13.0.0",
     "expo-splash-screen": "~0.17.5",
     "expo-status-bar": "~1.4.2",
     "matter-js": "^0.18.0",
@@ -19,9 +20,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "typescript": "^4.6.3",
     "@types/react": "~18.0.24",
-    "@types/react-native": "~0.70.6"
+    "@types/react-native": "~0.70.6",
+    "typescript": "^4.6.3"
   },
   "private": true
 }
